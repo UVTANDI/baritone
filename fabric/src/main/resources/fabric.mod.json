@@ -2,26 +2,29 @@
   "schemaVersion": 1,
   "id": "baritone",
   "version": "${version}",
-  "name": "Baritone Enhanced",
-  "description": "Baritone pathfinding with opt-in SeedOre world-generation analysis.",
+
+  "name": "Baritone",
+  "description": "Google Maps for Blockgame",
   "authors": [
-    "Baritone contributors",
-    "UVTANDI"
+    "leijurv", "Brady"
   ],
   "contact": {
-    "homepage": "https://github.com/UVTANDI/baritone",
-    "sources": "https://github.com/UVTANDI/baritone",
-    "issues": "https://github.com/UVTANDI/baritone/issues"
+    "homepage": "https://github.com/cabaletta/baritone",
+    "sources": "https://github.com/cabaletta/baritone",
+    "issues": "https://github.com/cabaletta/baritone/issues"
   },
+
   "license": "LGPL-3.0",
   "icon": "assets/baritone/icon.png",
+
   "environment": "*",
-  "entrypoints": {},
+  "entrypoints": {
+  },
   "mixins": [
-    "mixins.baritone.json"
+      "mixins.baritone.json"
   ],
   "depends": {
-    "fabricloader": ">=0.18.1",
+    "fabricloader": ">=0.14.22",
     "minecraft": ["1.21.11"]
   },
   "custom": {
