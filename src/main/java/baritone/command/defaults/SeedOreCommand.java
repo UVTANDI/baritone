@@ -130,7 +130,7 @@ public final class SeedOreCommand extends Command {
             return Stream.of("set", "radius", "dimension", "authorize-server", "status", "scan", "clear");
         }
         if (args.hasExactly(1)) {
-            String action = args.peekString().toLowerCase(Locale.ROOT);
+            String action = args.getArgs().getFirst().getValue().toLowerCase(Locale.ROOT);
             if ("dimension".equals(action)) {
                 return Stream.of("overworld", "nether", "end");
             }
