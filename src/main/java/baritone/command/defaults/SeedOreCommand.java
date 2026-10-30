@@ -90,8 +90,7 @@ public final class SeedOreCommand extends Command {
                 args.requireMax(0);
                 try {
                     service.authorizeServer(address);
-                    logDirect("SeedOre: local authorization allowlist updated for " +
-                            service.getAuthorizedServers().get(service.getAuthorizedServers().size() - 1) + ".");
+                    logDirect("SeedOre: local authorization allowlist updated for " + address + ".");
                     logDirect("This is a local declaration, not proof of server-owner permission.");
                 } catch (IllegalArgumentException exception) {
                     logDirect("SeedOre: enter a valid server hostname or IP address.");
