@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - seedore-1.21.11-fixed
+      - seedore-1.21.11
     paths:
       - '**.java'
       - '**.gradle'
