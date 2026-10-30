@@ -29,7 +29,7 @@ import java.util.Locale;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 /**
  * The {@link TabCompleteHelper} is a <b>single-use</b> object that helps you handle tab completion. It includes helper
@@ -206,7 +206,7 @@ public class TabCompleteHelper {
     /**
      * Filter out any element that doesn't start with {@code prefix} and return this object for chaining
      * <p>
-     * Assumes every element in this {@link TabCompleteHelper} is a fully qualified {@link ResourceLocation}.
+     * Assumes every element in this {@link TabCompleteHelper} is a fully qualified {@link Identifier}.
      * Unqualified prefixes match either the namespace or the path, across all supplied candidates.
      * Explicit namespaces restrict the results to that namespace. Returned ids remain fully qualified.
      *
@@ -214,7 +214,7 @@ public class TabCompleteHelper {
      * @return This {@link TabCompleteHelper}
      */
     public TabCompleteHelper filterPrefixNamespaced(String prefix) {
-        ResourceLocation loc = ResourceLocation.tryParse(prefix);
+        Identifier loc = Identifier.tryParse(prefix);
         if (loc == null) {
             stream = Stream.empty();
             return this;
@@ -223,7 +223,7 @@ public class TabCompleteHelper {
             return filterPrefix(loc.toString());
         }
 
-        // ResourceLocation parsing defaults an unqualified prefix to "minecraft:".
+        // Identifier parsing defaults an unqualified prefix to "minecraft:".
         // That is appropriate for execution, but hides modded candidates while completing.
         String search = prefix.toLowerCase(Locale.US);
         return filter(id -> {
